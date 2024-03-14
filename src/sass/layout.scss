@@ -1,0 +1,159 @@
+@use 'fonts';
+@use 'colors';
+@use 'mixins';
+
+$padding: 10vw;
+
+:root {
+  --rt-transition-closing-delay: 0.15s;
+  --rt-opacity: 1;
+}
+
+html {
+  font-family: fonts.$ui !important;
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  padding-top: 7rem;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: colors.$background;
+  overflow-x: hidden;
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+
+  @include mixins.screen('not-desktop') {
+    z-index: 1;
+  }
+}
+
+code {
+  font-family: fonts.$code;
+}
+
+::selection {
+  background-color: #babbf1;
+}
+
+footer {
+  bottom: 0;
+  padding: 3rem $padding;
+  color: colors.$text;
+  font-family: fonts.$ui;
+  font-weight: 200;
+
+  @include mixins.screen('not-desktop') {
+    text-align: center;
+  }
+}
+
+.showarchive {
+  cursor: pointer;
+}
+
+.container {
+  padding: 0 $padding;
+  width: min(80vw, 1024px);
+  margin: auto;
+
+  @include mixins.screen('mobile') {
+    width: min(90vw, 1024px);
+    padding: 0 calc($padding / 2);
+    padding-top: 6rem;
+  }
+}
+
+.title {
+  color: colors.$text;
+  font-family: fonts.$special;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.text {
+  font-size: fonts.$s0;
+  font-family: fonts.$body;
+}
+
+p {
+  color: colors.$text;
+  font-family: fonts.$body;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.ui-text,
+.ui-text p {
+  font-family: fonts.$ui;
+  color: colors.$text;
+}
+
+// SCROLLBAR
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #a8b0df;
+  border-radius: 3px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: colors.$background-alt;
+}
+
+.small-text {
+  font-size: fonts.$s-1;
+}
+
+.react-tooltip {
+  /* From https://css.glass */
+  background: rgba(30, 102, 245) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
+  // backdrop-filter: blur(12px) !important;
+  color: white !important;
+  font-family: fonts.$ui;
+  padding: 2px 5px !important;
+  transform: translateY(10px);
+  z-index: 9999 !important;
+}
+
+.react-tooltip__closing {
+  animation: disappear 0.15s forwards 0.05s;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}

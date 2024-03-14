@@ -1,0 +1,179 @@
+@use 'fonts';
+@use 'colors';
+@use 'mixins';
+@use 'spacing';
+
+.blog-title {
+  font-family: fonts.$header;
+  font-weight: 500;
+  font-size: fonts.$s4;
+  margin-top: spacing.$s2xl;
+}
+
+h2 {
+  margin-top: spacing.$s2xl;
+  margin-bottom: spacing.$sl;
+  padding: 0;
+}
+
+h3 {
+  font-size: fonts.$s1;
+  font-weight: 450;
+  margin-top: spacing.$sxl;
+  margin-bottom: spacing.$ss;
+}
+
+.container {
+  img {
+    max-width: 100%;
+    margin: spacing.$sm 0;
+  }
+}
+
+p,
+ul,
+ol {
+  font-family: fonts.$body;
+  color: colors.$text;
+  font-size: fonts.$s0;
+}
+
+blockquote {
+  position: relative;
+  margin: 0 0 1.5rem 0;
+  padding: 1rem;
+  background-color: colors.$background-alt;
+
+  p {
+    margin: 0;
+  }
+
+  &::before {
+    content: '';
+    background-color: colors.$pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+  }
+}
+
+.astro-code {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px -6px rgba(0, 0, 0, 0.75);
+}
+
+.footnote-icon,
+.footnote {
+  color: colors.$lavender;
+  text-decoration: none !important;
+  transition: all 0.2s;
+
+  &:hover {
+    color: black;
+    transform: scale(1.1);
+    font-weight: bold;
+  }
+}
+
+.footnote {
+  font-size: fonts.$s-1;
+  vertical-align: super;
+  font-family: fonts.$ui;
+}
+
+.footnote-icon {
+  font-size: fonts.$s-1;
+  margin-left: 8px;
+}
+
+.highlight-ref-selected {
+  display: relative;
+  animation: highlight-ref 1.5s ease-in-out 0.15s;
+  transition: all 0.5s;
+}
+
+@keyframes highlight-ref {
+  0% {
+    background-color: transparent;
+    font-weight: normal;
+  }
+
+  15% {
+    background-color: colors.$pink;
+    color: white;
+  }
+
+  50% {
+    background-color: colors.$pink;
+    color: white;
+  }
+
+  100% {
+    background-color: transparent;
+    font-weight: normal;
+  }
+}
+
+.blog-ssf-entry {
+  margin: 0.5rem 0;
+  color: colors.$text;
+  font-size: fonts.$s0;
+}
+
+.blog-ssf-date {
+  font-size: fonts.$s-1;
+}
+
+.pinetree {
+  font-family: fonts.$special;
+}
+
+.novela {
+  font-family: Novela;
+}
+
+.garamond {
+  font-family: Garamond;
+}
+
+.fraktion {
+  font-family: Fraktion;
+}
+
+.montreal {
+  font-family: NeueMontreal;
+}
+
+.hoverweight {
+  font-size: fonts.$s1;
+  font-family: fonts.$ui;
+  color: colors.$blue;
+
+  &:hover {
+    animation: hover 1s linear infinite alternate;
+  }
+
+  @keyframes hover {
+    from {
+      font-weight: 100;
+    }
+
+    to {
+      font-weight: 800;
+    }
+  }
+}
+
+.footnote-ref {
+  color: colors.$text;
+}
+
+.visitors {
+  font-size: fonts.$s-1;
+  color: colors.$text;
+  font-family: fonts.$ui;
+  margin-left: 2rem;
+}

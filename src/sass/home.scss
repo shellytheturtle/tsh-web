@@ -1,0 +1,58 @@
+@use 'fonts';
+@use 'colors';
+@use 'mixins';
+
+$padding: 15vw;
+
+.home-links {
+  margin-top: 3rem;
+}
+
+.splash {
+  margin-bottom: 1rem;
+  font-size: fonts.$s3;
+  font-weight: 200;
+  font-family: fonts.$ui;
+}
+
+.name {
+  margin-top: 3rem;
+  font-size: fonts.$s5;
+  font-family: fonts.$ui;
+
+  color: colors.$text;
+  font-weight: normal;
+}
+
+.home-buttons {
+  margin-bottom: 2rem;
+}
+
+.home-container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: calc(90vh - 15rem);
+}
+
+.status-green {
+  color: colors.$green;
+}
+
+.status-red {
+  color: colors.$red;
+}
+
+.status-link {
+  color: white !important;
+  margin-right: 1rem;
+  font-size: fonts.$s0;
+  font-weight: 100;
+
+  &:hover {
+    color: colors.$background-alt;
+  }
+}

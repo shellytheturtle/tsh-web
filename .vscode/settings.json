@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "temp": true
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

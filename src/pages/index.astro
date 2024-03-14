@@ -1,0 +1,13 @@
+---
+import Layout from '../components/layout.astro';
+import '../sass/home.scss';
+import { Status } from '../components/status.tsx';
+---
+
+<Layout title="turtleshell" description="there's no place like ~/" currPage="home">
+  <div class="home-container">
+    <h1 class="name">welcome to turtlenet!</h1>
+    <p class="splash">there's no place like ~/</p>
+    <Status />
+  </div>
+</Layout>

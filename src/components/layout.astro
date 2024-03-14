@@ -1,0 +1,27 @@
+---
+import { Tooltip } from 'react-tooltip';
+import '../sass/layout.scss';
+import Footer from './footer';
+import Header, { type HeaderLink } from './header';
+import Seo from './seo.astro';
+
+const { title, description, currPage, headContent, customPages, image } = Astro.props;
+---
+
+<!--
+The Layout component serves as the base component in which all content should be wrapped around.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <Seo title={title} description={description} image={image} />
+    {headContent}
+  </head>
+  <div class="body">
+    <Header currPage={currPage} customPages={customPages} client:idle />
+    <main class="container">
+      <slot />
+    </main>
+  </div>
+</html>
