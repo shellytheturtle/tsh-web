@@ -1,0 +1,9 @@
+import{r as m}from"./index.NEDEFKed.js";/* empty css                       */var d={exports:{}},o={};/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var x=m,b=Symbol.for("react.element"),h=Symbol.for("react.fragment"),f=Object.prototype.hasOwnProperty,_=x.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,j={key:!0,ref:!0,__self:!0,__source:!0};function p(i,e,a){var r,t={},l=null,s=null;a!==void 0&&(l=""+a),e.key!==void 0&&(l=""+e.key),e.ref!==void 0&&(s=e.ref);for(r in e)f.call(e,r)&&!j.hasOwnProperty(r)&&(t[r]=e[r]);if(i&&i.defaultProps)for(r in e=i.defaultProps,e)t[r]===void 0&&(t[r]=e[r]);return{$$typeof:b,type:i,key:l,ref:s,props:t,_owner:_.current}}o.Fragment=h;o.jsx=p;o.jsxs=p;d.exports=o;var n=d.exports;const c=[{name:"home",url:"/"},{name:"series",url:"https://devlog.bencuan.me"}],y=({currPage:i,customPages:e})=>{const[a,r]=m.useState(!1),t=()=>{r(!a)},l=e&&!a?c.concat(e):c;return n.jsxs("header",{children:[n.jsx("div",{className:`nav-container ${a?"mobile-visible":"mobile-hidden"}`,children:n.jsx("div",{className:"nav-links",children:l.map((s,u,v)=>n.jsxs("span",{className:"nav-link",children:[n.jsx("a",{className:i===s.name?"link nav-link nav-current":"link nav-link",href:s.url,children:s.name}),u+1!==v.length&&!a&&n.jsx("span",{children:" | "})]},s.name))})}),n.jsx("div",{className:"nav-container-mobile",children:n.jsx("button",{className:`hamburger hamburger--vortex ${a?"is-active":""}`,type:"button","aria-label":"Menu","aria-controls":"navigation","aria-expanded":a,onClick:t,children:n.jsx("span",{className:"hamburger-box",children:n.jsx("span",{className:"hamburger-inner"})})})})]})};export{y as default};

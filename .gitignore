@@ -45,7 +45,6 @@ typings/
 *.tgz
 
 # build output
-dist/
 static/
 # generated types
 .astro/
@@ -81,4 +80,3 @@ archives/2022/static/PP*
 .netlify
 
 # fonts
-public/fonts
